@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大秦焚書坑儒・咸陽全景檔案總表（table.html）</title>
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body class="theme-qin">
+
+  <header>
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Bamboo_slip_-_1.jpg?width=480"
+      onerror="this.onerror=null; this.src='images/cover.svg';"
+      alt="戰國秦漢竹簡檔案"
+    >
+    <div>
+      <h1>咸陽御史府<br>焚書坑儒檔案總表</h1>
+      <p>收錄西元前 213 至前 212 年間，所有<strong>禁毀典籍、坑殺名單、豁免書目與大秦律例</strong>完整明細。</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">← 返回推坑首頁</a></li>
+      <li><a href="#archive-table">檔案總表</a></li>
+      <li><a href="#compare-table">六國 vs 大秦對照表</a></li>
+      <li><a href="#judge-tool">竹簡安檢模擬器</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- 區塊 1：可搜尋與篩選的完整資料總表 -->
+    <section id="archive-table">
+      <h2>📜 咸陽焚書坑儒事件明細總表</h2>
+      <p>輸入關鍵字或點選分類按鈕，即時篩選大秦官方處理紀錄：</p>
+
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="🔍 搜尋書名、人物、刑罰或年份（例如：李斯、詩經、盧生）…">
+        <div class="filter-group" id="filterGroup">
+          <button type="button" class="filter-btn active" data-cat="all">全部項目</button>
+          <button type="button" class="filter-btn" data-cat="burn">焚書禁毀</button>
+          <button type="button" class="filter-btn" data-cat="pit">咸陽坑儒</button>
+          <button type="button" class="filter-btn" data-cat="keep">豁免保留</button>
+          <button type="button" class="filter-btn" data-cat="law">大秦律條</button>
+        </div>
+      </div>
+
+      <p class="result-count" id="resultCount">目前顯示全部 10 筆檔案紀錄</p>
+
+      <div class="table-scroll">
+        <table id="qinTable">
+          <thead>
+            <tr>
+              <th>編號</th>
+              <th>年份</th>
+              <th>類別</th>
+              <th>對象／典籍名稱</th>
+              <th>執行結果與處置</th>
+              <th>危險度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-cat="burn">
+              <td>Q-001</td>
+              <td>前 213 年</td>
+              <td>焚書禁毀</td>
+              <td>六國史記（《竹書紀年》等）</td>
+              <td>非《秦記》者全數燒毀，避免諸國舊史動搖大秦正統</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="burn">
+              <td>Q-002</td>
+              <td>前 213 年</td>
+              <td>焚書禁毀</td>
+              <td>民間私藏《詩》《書》百家語</td>
+              <td>限期三十日內送交各地守尉集中焚燒</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="keep">
+              <td>Q-003</td>
+              <td>前 213 年</td>
+              <td>豁免保留</td>
+              <td>博士官所職典籍</td>
+              <td>咸陽官方博士官藏書閣保留備份，一般百姓不得私藏</td>
+              <td>★☆☆☆☆</td>
+            </tr>
+            <tr data-cat="keep">
+              <td>Q-004</td>
+              <td>前 213 年</td>
+              <td>豁免保留</td>
+              <td>醫藥・卜筮・種樹之書</td>
+              <td>實用民生技術書籍完全免燒，鼓勵民間耕戰與算命</td>
+              <td>☆☆☆☆☆</td>
+            </tr>
+            <tr data-cat="law">
+              <td>Q-005</td>
+              <td>前 213 年</td>
+              <td>大秦律條</td>
+              <td>偶語《詩》《書》罪</td>
+              <td>兩人以上在街頭私下討論詩書者，直接「棄市」（公開處決）</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="law">
+              <td>Q-006</td>
+              <td>前 213 年</td>
+              <td>大秦律條</td>
+              <td>以古非今罪</td>
+              <td>拿三代古制批評當朝郡縣制者，直接族滅</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="law">
+              <td>Q-007</td>
+              <td>前 213 年</td>
+              <td>大秦律條</td>
+              <td>逾期不燒書罪</td>
+              <td>令下滿三十日仍未燒毀者，臉上刺字（黥刑）並發配修築長城四年</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr data-cat="pit">
+              <td>Q-008</td>
+              <td>前 212 年</td>
+              <td>咸陽坑儒</td>
+              <td>方士侯生、盧生</td>
+              <td>求仙藥無果且背後批評始皇「剛戾自用」，連夜逃亡引發全城大搜捕</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="pit">
+              <td>Q-009</td>
+              <td>前 212 年</td>
+              <td>咸陽坑儒</td>
+              <td>咸陽諸生四百六十餘人</td>
+              <td>御史審訊互相牽連後，全數於咸陽挖坑活埋，以儆效尤</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr data-cat="keep">
+              <td>Q-010</td>
+              <td>前 212 年</td>
+              <td>豁免保留</td>
+              <td>孔鮒夾牆藏書行動</td>
+              <td>魯國儒生孔鮒偷偷將《尚書》《論語》砌進孔子故居牆壁，成功躲過一劫</td>
+              <td>★★★☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 區塊 2：六國文青 vs 關中老秦人對照表 -->
+    <section id="compare-table">
+      <h2>⚔️ 戰國文化衝突對照表（齊魯儒生 vs. 關中法家）</h2>
+      <table>
+        <caption>為什麼雙方一见面就想把對方送進坑裡？</caption>
+        <thead>
+          <tr>
+            <th>比較維度</th>
+            <th>東方六國儒生（齊、魯代表）</th>
+            <th>關中大秦法家（李斯、始皇代表）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>口頭禪</strong></td>
+            <td>「昔者先王之道……」「《詩》云、《書》曰……」</td>
+            <td>「依秦律處置」「書同文、車同軌」</td>
+          </tr>
+          <tr>
+            <td><strong>政治理想</strong></td>
+            <td>分封制、禮樂教化、以古為師</td>
+            <td>郡縣制、中央集權、以法為教、以吏為師</td>
+          </tr>
+          <tr>
+            <td><strong>對竹簡的態度</strong></td>
+            <td>傳家寶，出門一定要帶三車竹簡</td>
+            <td>佔空間又難統一字體，最適合拿來生火取暖</td>
+          </tr>
+          <tr>
+            <td><strong>最終去處</strong></td>
+            <td>夾牆藏書、隱居山林，或咸陽一號深坑</td>
+            <td>咸陽宮升官加薪（直到遇到趙高為止）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 區塊 3：互動功能 — 竹簡安檢模擬器 -->
+    <section id="judge-tool">
+      <h2>⚖️ 咸陽城門「竹簡安檢」模擬器</h2>
+      <p>輸入你背包裡帶的書名或物品，看看城門廷尉會放行還是直接送你入坑：</p>
+      <form id="judgeForm">
+        <div>
+          <label for="bookInput">你攜帶的書名或物品</label>
+          <input type="text" id="bookInput" placeholder="試試輸入：詩經、種樹指南、秦記、尚書、長生不老藥…">
+        </div>
+        <button type="submit">過安檢門 🔥</button>
+      </form>
+      <article id="judgeResult" style="display:none;"></article>
+    </section>
+
+    <!-- aside：主題切換器 + 捷徑 -->
+    <aside>
+      <h2>🎨 切換竹簡介面風格</h2>
+      <p style="font-size:0.9rem; color:var(--soft);">點選按鈕即時變換全站配色：</p>
+      <div class="theme-switcher">
+        <button type="button" class="theme-btn" data-theme="theme-qin">🔥 竹簡焚書風</button>
+        <button type="button" class="theme-btn" data-theme="theme-pit">🕳️ 暗黑坑底風</button>
+        <button type="button" class="theme-btn" data-theme="theme-scroll">📜 青銅古籍風</button>
+      </div>
+      <hr style="border:0; border-top:1px dashed var(--line); margin:16px 0;">
+      <h2>🌐 語言與字體</h2>
+      <div class="lang-switcher" role="group" aria-label="語言">
+        <button type="button" class="lang-btn" data-lang="tc">繁體</button>
+        <button type="button" class="lang-btn" data-lang="sc">簡體</button>
+      </div>
+      <div class="aside-field">
+        <label for="fontSel">字體</label>
+        <select id="fontSel">
+          <option value="default">預設（黑體＋明體標題）</option>
+          <option value="serif">明體</option>
+          <option value="kai">楷體</option>
+          <option value="system">系統字體</option>
+        </select>
+      </div>
+      <div class="aside-field">
+        <span class="aside-label">字級</span>
+        <div class="fs-switcher" role="group" aria-label="字級">
+          <button type="button" class="fs-btn" data-fs="s">小</button>
+          <button type="button" class="fs-btn" data-fs="m">中</button>
+          <button type="button" class="fs-btn" data-fs="l">大</button>
+          <button type="button" class="fs-btn" data-fs="xl">特大</button>
+        </div>
+      </div>
+      <hr style="border:0; border-top:1px dashed var(--line); margin:16px 0;">
+      <h2>🔗 快速傳送門</h2>
+      <ul>
+        <li><a href="index.html">🏠 回到《入坑吧！焚書坑儒》主頁</a></li>
+        <li><a href="index.html#guestbook">✍️ 前往咸陽坑底留言板</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>© 西元前 212 年 大秦御史府檔案室 ・ <code>table.html</code> 擴充功能版</p>
+    <p><a href="#">↑ 回到最上面</a></p>
+  </footer>
+
+  <script src="features.js"></script>
+  <script src="lang.js"></script>
+  <script>
+    // 1. 主題切換（並記住選擇）
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const savedTheme = localStorage.getItem('qinTheme');
+    if (savedTheme) document.body.className = savedTheme;
+
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.theme;
+        document.body.className = theme;
+        localStorage.setItem('qinTheme', theme);
+      });
+    });
+
+    // 2. 表格即時搜尋與分類篩選
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('#qinTable tbody tr');
+    const resultCount = document.getElementById('resultCount');
+    let currentCat = 'all';
+
+    function filterTable() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      rows.forEach(row => {
+        const matchCat = currentCat === 'all' || row.dataset.cat === currentCat;
+        const matchText = row.textContent.toLowerCase().includes(keyword);
+        if (matchCat && matchText) {
+          row.style.display = '';
+          visible++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+      resultCount.textContent = `目前顯示 ${visible} 筆檔案紀錄（共 ${rows.length} 筆）`;
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = btn.dataset.cat;
+        filterTable();
+      });
+    });
+
+    // 3. 竹簡安檢模擬器
+    const judgeForm = document.getElementById('judgeForm');
+    const judgeResult = document.getElementById('judgeResult');
+    judgeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = document.getElementById('bookInput').value.trim();
+      if (!val) return;
+      judgeResult.style.display = 'block';
+
+      if (/醫|藥|医|药|卜|筮|算命|風水|风水|種樹|种树|農|农|秦記|秦记|小篆/.test(val)) {
+        judgeResult.innerHTML = `<h3>✅ 安檢通過（免燒放行）</h3><p>廷尉檢視了你的《<strong>${val}</strong>》：屬於大秦核准的實用工具書或官方史書，准予通行！</p>`;
+      } else if (/仙|丹|不老|盧生|卢生|侯生|方士/.test(val)) {
+        judgeResult.innerHTML = `<h3>🚨 最高警戒（立即送往咸陽深坑）</h3><p>發現可疑方士物品「<strong>${val}</strong>」！涉嫌詐欺始皇帝求仙經費，已通知御史台挖坑。</p>`;
+      } else {
+        judgeResult.innerHTML = `<h3>🔥 違禁私學典籍（限期三十日焚毀）</h3><p>你攜帶的《<strong>${val}</strong>》不在豁免名單內！請立即投入咸陽宮前火堆，否則臉上刺字發配修長城。</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
