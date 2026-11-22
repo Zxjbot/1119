@@ -921,3 +921,70 @@ html.lang-sc.font-system * { font-family: system-ui, -apple-system, "PingFang SC
 html.fs-s { font-size: 14px; }   html.fs-s body { font-size: 15px; }
 html.fs-l { font-size: 18px; }   html.fs-l body { font-size: 19.5px; }
 html.fs-xl { font-size: 20px; }  html.fs-xl body { font-size: 22px; }
+/* =========================================================
+   資料來源區塊
+   ========================================================= */
+.source-group { margin-top: 22px; }
+.source-group h3 { margin: 0 0 2px; font-size: 1.1rem; }
+.source-desc { margin: 0 0 12px; color: var(--soft); font-size: 0.92rem; }
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.source-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 12px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-left: 5px solid var(--main);
+  border-radius: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 400;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.source-card:hover, .source-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--main);
+  box-shadow: 4px 4px 0 var(--line);
+  outline: none;
+}
+.source-card:focus-visible { outline: 3px solid var(--pop); outline-offset: 2px; }
+
+.source-tag {
+  align-self: flex-start;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--main);
+}
+.source-tag.t-second { background: #8a6a3a; }
+.source-tag.t-debate { background: #a94438; }
+.source-card:has(.t-second) { border-left-color: #8a6a3a; }
+.source-card:has(.t-debate) { border-left-color: #a94438; }
+
+.source-title { font-family: "Noto Serif TC", serif; font-size: 1.02rem; line-height: 1.4; color: var(--ink); }
+.source-site { font-size: 0.8rem; color: var(--soft); }
+.source-note { font-size: 0.88rem; line-height: 1.55; color: var(--ink); flex: 1; }
+.source-go { margin-top: 4px; font-size: 0.82rem; font-weight: 700; color: var(--main); }
+
+.source-note-box {
+  margin-top: 22px;
+  padding: 14px 18px;
+  background: var(--bg);
+  border: 1.5px dashed var(--line);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.source-note-box ul { margin: 6px 0 0; }
+.source-note-box li { margin: 4px 0; }
+
+@media (prefers-reduced-motion: reduce) { .source-card { transition: none; } }
